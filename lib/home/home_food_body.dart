@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_sale/utils/colors.dart';
+import 'package:flutter_app_sale/utils/dimensions.dart';
 import 'package:flutter_app_sale/widgets/big_text.dart';
 import 'package:flutter_app_sale/widgets/icon_and_text_widget.dart';
 import 'package:flutter_app_sale/widgets/small_text.dart';
@@ -14,8 +15,8 @@ class HomeFoodBody extends StatefulWidget {
 class _HomeFoodBodyState extends State<HomeFoodBody> {
   PageController pageController = PageController(viewportFraction: 0.9);
   var _currPageValue = 0.0 ;
-  var _scaleFactor = 0.8;
-  var _height = 220 ;
+  double _scaleFactor = 0.8;
+  double _height = Dimensions.pageViewController ;
 
   @override
   void initState() {
@@ -38,7 +39,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
       children: [
         Container(
 
-          height: 330,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -87,10 +88,10 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
       child: Stack(
         children: [
           Container(
-            height: 220,
-            margin: EdgeInsets.only(right: 10 , left: 10),
+            height: Dimensions.pageViewController,
+            margin: EdgeInsets.only(right: Dimensions.width10 , left: Dimensions.width10),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(Dimensions.radius30),
                 color: index.isEven?Color(0xFF69c5df):Color(0xFF9294cc),
                 image: DecorationImage(
                     fit: BoxFit.cover,
@@ -103,10 +104,10 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 130,
-              margin: EdgeInsets.only(right: 30 , left: 30 , bottom: 30),
+              height: Dimensions.pageTextController,
+              margin: EdgeInsets.only(right: Dimensions.width30 , left: Dimensions.width30 , bottom: Dimensions.height30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -117,12 +118,12 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                   ]
               ),
               child: Container(
-                padding: EdgeInsets.only(top: 10 ,left: 10 ,right: 12),
+                padding: EdgeInsets.only(top: Dimensions.height10 ,left: Dimensions.height10 ,right: Dimensions.height10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(text: "Koraen Food"),
-                    SizedBox(height: 15,),
+                    SizedBox(height: Dimensions.height10,),
                     Row(
                       children: [
                         Wrap(
@@ -131,15 +132,15 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                           }),
 
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(width: Dimensions.width10,),
                         SmallText(text: "4.5"),
-                        SizedBox(width: 10,),
+                        SizedBox(width: Dimensions.width10,),
                         SmallText(text: "1278"),
-                        SizedBox(width: 10,),
+                        SizedBox(width: Dimensions.width10,),
                         SmallText(text: "Comment"),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: Dimensions.height20,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -148,13 +149,13 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                             text: "Normal",
                             iconColor: AppColors.iconColor1
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(width: Dimensions.width10,),
                         IconAndTextWidget(
                             icon: Icons.location_on,
                             text: "1.7 km",
                             iconColor: AppColors.mainColor
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(width: Dimensions.width10,),
                         IconAndTextWidget(
                             icon: Icons.watch_later_outlined,
                             text: "32 min",
