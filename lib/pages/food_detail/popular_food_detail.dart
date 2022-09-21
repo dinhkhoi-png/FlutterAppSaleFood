@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app_sale/widgets/app_column.dart';
 import 'package:flutter_app_sale/widgets/app_icon.dart';
 
+
 import '../../utils/dimensions.dart';
+
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -39,6 +42,13 @@ class PopularFoodDetail extends StatelessWidget {
                   AppIcon(icon: Icons.shopping_cart_outlined)
                 ],
               )
+          ),
+          Positioned(
+            left: 0,
+              right: 0,
+              bottom: 0,
+              top: Dimensions.popularFoodImg-30,
+              child:AppColumn(),
           )
         ],
       ),

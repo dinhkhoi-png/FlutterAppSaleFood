@@ -3,6 +3,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_sale/utils/colors.dart';
 import 'package:flutter_app_sale/utils/dimensions.dart';
+import 'package:flutter_app_sale/widgets/app_column.dart';
 import 'package:flutter_app_sale/widgets/big_text.dart';
 import 'package:flutter_app_sale/widgets/icon_and_text_widget.dart';
 import 'package:flutter_app_sale/widgets/small_text.dart';
@@ -223,52 +224,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
               ),
               child: Container(
                 padding: EdgeInsets.only(top: Dimensions.height10 ,left: Dimensions.height10 ,right: Dimensions.height10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Koraen Food"),
-                    SizedBox(height: Dimensions.height10,),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) {
-                            return Icon(Icons.star , color: AppColors.mainColor,);
-                          }),
-
-                        ),
-                        SizedBox(width: Dimensions.width10,),
-                        SmallText(text: "4.5"),
-                        SizedBox(width: Dimensions.width10,),
-                        SmallText(text: "1278"),
-                        SizedBox(width: Dimensions.width10,),
-                        SmallText(text: "Comment"),
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconAndTextWidget(
-                            icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: AppColors.iconColor1
-                        ),
-                        SizedBox(width: Dimensions.width10,),
-                        IconAndTextWidget(
-                            icon: Icons.location_on,
-                            text: "1.7 km",
-                            iconColor: AppColors.mainColor
-                        ),
-                        SizedBox(width: Dimensions.width10,),
-                        IconAndTextWidget(
-                            icon: Icons.watch_later_outlined,
-                            text: "32 min",
-                            iconColor: AppColors.iconColor2
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                child: AppColumn(),
               ),
 
             ),
