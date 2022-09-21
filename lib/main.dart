@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app_sale/pages/food_detail/popular_food_detail.dart';
 
 
+
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
@@ -10,6 +11,11 @@ void main() {
     // systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.white, // status bar color
   ));
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky, overlays: [
+    SystemUiOverlay.top, //This line is used for showing the bottom bar
+  ]);
+
   runApp(const MyApp());
 }
 
@@ -28,4 +34,6 @@ class MyApp extends StatelessWidget {
       home: const PopularFoodDetail(),
     );
   }
+
 }
+

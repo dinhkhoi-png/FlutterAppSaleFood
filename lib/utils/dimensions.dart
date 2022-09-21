@@ -14,7 +14,7 @@ class Dimensions {
   static double height20 = screenHeight/42.2;
   static double height30 = screenHeight/28.13;
   static double height45 = screenHeight/18.7;
-
+  static double height50 = screenHeight/16.88;
 
   //dynamic width padding and margin
   static double width10 = screenHeight/84.4;
@@ -39,6 +39,7 @@ class Dimensions {
 
   //page detail
   static double popularFoodImg = screenHeight/2.41;
+
 
 
 }
