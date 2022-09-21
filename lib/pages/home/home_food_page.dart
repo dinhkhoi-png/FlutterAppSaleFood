@@ -24,7 +24,7 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
           Container(
             //show header
             child: Container(
-              margin: EdgeInsets.only(top: Dimensions.height45 , bottom: Dimensions.height15),
+              margin: EdgeInsets.only(top: Dimensions.height20 , bottom: Dimensions.height20),
               padding: EdgeInsets.only(left: Dimensions.width20 , right: Dimensions.width20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -4,6 +4,8 @@ import 'package:flutter_app_sale/pages/food_detail/popular_food_detail.dart';
 
 
 
+
+
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      home: const PopularFoodDetail(),
+      home: PopularFoodDetail(),
     );
   }
 

@@ -56,7 +56,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
           dotsCount: 5,
           position: _currPageValue,
           decorator: DotsDecorator(
-          size: const Size.square(10.0),
+          size: const Size.square(9.0),
           activeSize: const Size(18.0, 9.0),
           activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           ),
@@ -223,8 +223,17 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                   ]
               ),
               child: Container(
-                padding: EdgeInsets.only(top: Dimensions.height10 ,left: Dimensions.height10 ,right: Dimensions.height10),
-                child: AppColumn(),
+                padding: EdgeInsets.only(top: Dimensions.height10,left: Dimensions.height20 ,right: Dimensions.height20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(Dimensions.radius20),
+                      topLeft: Radius.circular(Dimensions.radius20),
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                    color: Colors.white
+                ),
+                child:  AppColumn(text: "HongKong Food"),
               ),
 
             ),

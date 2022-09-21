@@ -6,23 +6,15 @@ import '../utils/dimensions.dart';
 import 'big_text.dart';
 import 'icon_and_text_widget.dart';
 class AppColumn extends StatelessWidget {
-  const AppColumn({Key? key}) : super(key: key);
+  final String text;
+  AppColumn({Key? key ,required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      padding: EdgeInsets.only(top: Dimensions.height20 ,left: Dimensions.height20 ,right: Dimensions.height20),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(Dimensions.radius20),
-            topLeft: Radius.circular(Dimensions.radius20),
-          ),
-          color: Colors.white
-      ),
-      child: Column(
+    return  Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BigText(text: "Koraen Food"),
+          BigText(text: text , size: Dimensions.font26,),
           SizedBox(height: Dimensions.height10,),
           Row(
             children: [
@@ -40,7 +32,7 @@ class AppColumn extends StatelessWidget {
               SmallText(text: "Comment"),
             ],
           ),
-          SizedBox(height: Dimensions.height20,),
+          SizedBox(height: Dimensions.height10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -64,7 +56,7 @@ class AppColumn extends StatelessWidget {
             ],
           )
         ],
-      ),
-    );
+      );
+
   }
 }
