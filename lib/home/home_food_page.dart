@@ -19,6 +19,7 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
       body: Column(
         children: [
           Container(
+            //show header
             child: Container(
               margin: EdgeInsets.only(top: 45 , bottom: 15),
               padding: EdgeInsets.only(left: 20 , right: 20),
@@ -51,6 +52,7 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
               ),
             ),
           ),
+          //show body
           HomeFoodBody(),
         ],
       ),

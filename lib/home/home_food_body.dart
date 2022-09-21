@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_sale/utils/colors.dart';
 import 'package:flutter_app_sale/widgets/big_text.dart';
@@ -33,15 +34,28 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Column(
+      children: [
+        Container(
 
-      height: 330,
-      child: PageView.builder(
-        controller: pageController,
-          itemCount: 5,
-          itemBuilder: (context , position){ // 1 ngữ cảnh và chỉ mục (vị trí của position)
-       return _buildPageItem(position);
-    }),
+          height: 330,
+          child: PageView.builder(
+              controller: pageController,
+              itemCount: 5,
+              itemBuilder: (context , position){ // 1 ngữ cảnh và chỉ mục (vị trí của position)
+                return _buildPageItem(position);
+              }),
+        ),
+          new DotsIndicator(
+          dotsCount: 5,
+          position: _currPageValue,
+          decorator: DotsDecorator(
+          size: const Size.square(10.0),
+          activeSize: const Size(18.0, 9.0),
+          activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+          ),
+          ),
+      ],
     );
   }
   Widget _buildPageItem(int index){
@@ -94,6 +108,13 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xFFe8e8e),
+                      blurRadius: 6.0,
+                      offset: Offset(0 ,5)
+                    )
+                  ]
               ),
               child: Container(
                 padding: EdgeInsets.only(top: 10 ,left: 10 ,right: 12),
@@ -120,6 +141,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                     ),
                     SizedBox(height: 20,),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconAndTextWidget(
                             icon: Icons.circle_sharp,
