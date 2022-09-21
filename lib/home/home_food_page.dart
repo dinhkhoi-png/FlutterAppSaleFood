@@ -44,7 +44,7 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
                   Container(
                     width: Dimensions.width45,
                     height: Dimensions.height45,
-                    child: Icon(Icons.search , color: Colors.white,),
+                    child: Icon(Icons.search , color: Colors.white , size: Dimensions.iconSize24,),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(Dimensions.radius20),
                       color: AppColors.mainColor,
