@@ -5,7 +5,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.blue, // navigation bar color
+    // systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.white, // status bar color
   ));
   runApp(const MyApp());

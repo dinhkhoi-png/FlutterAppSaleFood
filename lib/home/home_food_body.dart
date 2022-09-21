@@ -1,3 +1,4 @@
+
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_sale/utils/colors.dart';
@@ -37,6 +38,9 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        /**
+         * Slider
+         */
         Container(
 
           height: Dimensions.pageView,
@@ -47,6 +51,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                 return _buildPageItem(position);
               }),
         ),
+          //dots
           new DotsIndicator(
           dotsCount: 5,
           position: _currPageValue,
@@ -56,6 +61,59 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
           activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           ),
           ),
+        SizedBox(height: Dimensions.height30,),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width20),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Thực Đơn"),
+              SizedBox(width: Dimensions.width10,),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: "." , color: Colors.black26),
+              ),
+              SizedBox(width: Dimensions.width10,),
+              Container(
+                margin: const EdgeInsets.only(bottom: 2),
+                child: SmallText(text: "Menu chính",),
+              )
+            ],
+          ),
+        ),
+        //list food
+        Container(
+          height: 900,
+          child: ListView.builder(
+              // shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: 10,
+              itemBuilder: (context , index){
+                return Container(
+                  margin: EdgeInsets.only(right: Dimensions.width20, left: Dimensions.width20,bottom: Dimensions.height10),
+                  child: Row(
+                    children: [
+                      //image section
+                      Container(
+                        width:120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(Dimensions.radius20),
+                            color: Colors.white38,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                                image: AssetImage(
+                                    "assets/image/food0.png"
+                                )
+                            )
+                        ),
+                      )
+                    ],
+                  ),
+                );
+
+              }),
+        )
       ],
     );
   }
@@ -168,7 +226,8 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
               ),
 
             ),
-          )
+          ),
+
         ],
       ),
     );

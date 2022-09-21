@@ -30,10 +30,10 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
                 children: [
                   Column(
                     children: [
-                      BigText(text: "Hồ Chí Minh" , color: AppColors.mainColor,),
+                      BigText(text: "A Mà Kitchen" , color: AppColors.mainColor,),
                       Row(
                         children: [
-                          SmallText(text: "Quận 1" , color: Colors.black54,),
+                          SmallText(text: "Quận 3" , color: Colors.black54,),
                           Icon(Icons.arrow_drop_down_sharp),
 
                         ],
@@ -55,7 +55,11 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
             ),
           ),
           //show body
-          HomeFoodBody(),
+          Expanded(
+            child: SingleChildScrollView(
+                child: HomeFoodBody()),
+          ),
+
         ],
       ),
     );
