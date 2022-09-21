@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app_sale/home/home_food_page.dart';
+import 'package:flutter_app_sale/pages/food_detail/popular_food_detail.dart';
+
+
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      home: const HomeFoodPage(),
+      home: const PopularFoodDetail(),
     );
   }
 }

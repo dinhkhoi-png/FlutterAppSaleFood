@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_sale/home/home_food_body.dart';
+
 import 'package:flutter_app_sale/utils/dimensions.dart';
 import 'package:flutter_app_sale/widgets/big_text.dart';
 import 'package:flutter_app_sale/widgets/small_text.dart';
 
-import '../utils/colors.dart';
+import '../../utils/colors.dart';
+import 'home_food_body.dart';
 
 class HomeFoodPage extends StatefulWidget {
   const HomeFoodPage({Key? key}) : super(key: key);

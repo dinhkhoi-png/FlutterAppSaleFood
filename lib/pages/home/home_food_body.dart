@@ -42,7 +42,6 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
          * Slider
          */
         Container(
-
           height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
@@ -82,10 +81,8 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
           ),
         ),
         //list food
-        Container(
-          height: 900,
-          child: ListView.builder(
-              // shrinkWrap: true,
+         ListView.builder(
+              shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemCount: 10,
               itemBuilder: (context , index){
@@ -95,8 +92,8 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                     children: [
                       //image section
                       Container(
-                        width:120,
-                        height: 120,
+                        width:Dimensions.listViewImg,
+                        height: Dimensions.listViewImg,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(Dimensions.radius20),
                             color: Colors.white38,
@@ -111,7 +108,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                       //text
                       Expanded(
                         child: Container(
-                          height: 100,
+                          height: Dimensions.listViewCont,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(Dimensions.radius20),
@@ -120,6 +117,41 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                             color: Colors.white,
 
                           ),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 7 ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                BigText(text: "Tôm Đậu Hủ Thố Hải Sản"),
+                                SizedBox(height: Dimensions.height10,),
+                                SmallText(text: "Saefood With Tofu Clay Pot"),
+                                SizedBox(height: Dimensions.height10,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconAndTextWidget(
+                                        icon: Icons.circle_sharp,
+                                        text: "Normal",
+                                        iconColor: AppColors.iconColor1
+                                    ),
+                                    SizedBox(width: Dimensions.width10,),
+                                    IconAndTextWidget(
+                                        icon: Icons.location_on,
+                                        text: "1.7 km",
+                                        iconColor: AppColors.mainColor
+                                    ),
+                                    SizedBox(width: Dimensions.width10,),
+                                    IconAndTextWidget(
+                                        icon: Icons.watch_later_outlined,
+                                        text: "32 min",
+                                        iconColor: AppColors.iconColor2
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       )
                     ],
@@ -127,7 +159,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                 );
 
               }),
-        )
+
       ],
     );
   }
