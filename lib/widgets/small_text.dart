@@ -16,7 +16,7 @@ class SmallText extends StatelessWidget {
       text,
 
       style: TextStyle(
-          fontFamily: "Roboto",
+          fontFamily: "Nunito",
           fontSize: size==0?Dimensions.font14:size  ,
           height: height
       ),

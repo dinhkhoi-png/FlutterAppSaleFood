@@ -68,7 +68,7 @@ class PopularFoodDetail extends StatelessWidget {
                   children: [
                     AppColumn(text: "Lẩu Thái Hải Sản",),
                     SizedBox(height: Dimensions.height20,),
-                    BigText(text: "Introduce"),
+                    BigText(text: "Giới thiệu"),
                     SizedBox(height: Dimensions.height20,),
                     Expanded(
                       child: SingleChildScrollView(
@@ -78,6 +78,7 @@ class PopularFoodDetail extends StatelessWidget {
                               "kích thích vị giác, giúp ăn ngon miệng hơn. "
                               "Đặc biệt, những ngày trời lạnh ngồi quây quần bên nồi"
                               "lẩu Thái chua cay tỏa hương thơm nồng thì ấm lòng hết biết. \n "
+                              "Đặc trưng của Lẩu Thái không thể thiếu vị cay của ớt, vị thơm của gừng, sả cùng lá chanh, kết hợp với vị ngọt của nước hầm xương, những nguyên liệu tươi sống của hải sản như cua, mực, tôm, sò, cá,… và đặc biệt không thể thiếu những món rau tươi ăn kèm như nấm, rau muống, rau cải,…Nước lẩu Thái là sự kết hợp của nhiều hương vị nồng nàn và đậm đà: vị chua đặc trưng của lẩu, vị ngọt từ nước hầm và vị cay tinh tế …\n"
                               "Nếu bạn muốn tự mình thực hiện món này ở nhà thì hãy luôn nhớ "
                               "Cooky có sẵn pack ướp sẵn, chỉ cần order là có ngay cho bạn "
                               "trổ tài làm ngay nhé.",)),
