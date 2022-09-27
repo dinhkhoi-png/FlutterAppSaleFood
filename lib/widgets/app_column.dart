@@ -17,6 +17,7 @@ class AppColumn extends StatelessWidget {
           BigText(text: text , size: Dimensions.font26,),
           SizedBox(height: Dimensions.height10,),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Wrap(
                 children: List.generate(5, (index) {
@@ -24,12 +25,12 @@ class AppColumn extends StatelessWidget {
                 }),
 
               ),
-              SizedBox(width: Dimensions.width5,),
-              SmallText(text: "4.5"),
-              SizedBox(width: Dimensions.width5,),
+              SizedBox(width: 6),
+              SmallText(text: "5.0"),
+              SizedBox(width: 6),
               SmallText(text: "1278"),
-              SizedBox(width: Dimensions.width5,),
-              SmallText(text: "Comment"),
+              SizedBox(width: 6),
+              SmallText(text:"Comment"),
             ],
           ),
           SizedBox(height: Dimensions.height10,),
