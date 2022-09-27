@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app_sale/data/controller/popular_product_controller.dart';
+import 'package:flutter_app_sale/data/controller/recommended_product_controller.dart';
 import 'package:flutter_app_sale/pages/food_detail/recommended_food_detail.dart';
 import 'package:flutter_app_sale/pages/home/home_food_page.dart';
+import 'package:flutter_app_sale/routes/route_helper.dart';
 import 'package:get/get.dart';
 import 'helper/dependecies.dart' as dep;
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
+    Get.find<RecommendedProductController>().getRecommendedProductList();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -30,6 +33,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomeFoodPage(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
     );
   }
 
