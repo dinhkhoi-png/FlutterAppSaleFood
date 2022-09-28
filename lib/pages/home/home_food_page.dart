@@ -31,10 +31,10 @@ class _HomeFoodPageState extends State<HomeFoodPage> {
                 children: [
                   Column(
                     children: [
-                      BigText(text: "A Mà Kitchen" , color: AppColors.mainColor,),
+                      BigText(text: "Chang Kang Kung" , color: AppColors.mainColor,),
                       Row(
                         children: [
-                          SmallText(text: "Quận 3" , color: Colors.black54,),
+                          SmallText(text: "Quận 1" , color: Colors.black54,),
                           Icon(Icons.arrow_drop_down_sharp),
 
                         ],

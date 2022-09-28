@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_app_sale/data/repository/cart_repo.dart';
 import 'package:flutter_app_sale/models/products_model.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,7 @@ class CartController extends GetxController{
                 quantity: value.quantity!+quantity,
                 isExit: true,
                 time:DateTime.now().toString(),
+                product: product,
           );
         });
 
@@ -47,16 +49,18 @@ class CartController extends GetxController{
             quantity: quantity,
             isExit: true,
             time:DateTime.now().toString(),
+            product: product,
 
           );
         });
       }else{
         Get.snackbar("Product Count", "You need add an item !",
             backgroundColor: AppColors.mainColor,
+          colorText: Colors.white,
         );
       }
     }
-
+    update();
 
   }
 
@@ -80,10 +84,18 @@ class CartController extends GetxController{
   }
 
   int get totalItems{
-    var totalQuantity = 0 ;
+    var totalQuantity = 0;
     _items.forEach((key, value) {
-      totalQuantity += value.quantity!;
+      totalQuantity +=value.quantity!;
     });
     return totalQuantity;
   }
+
+  List<CartModel> get getItems{
+    return _items.entries.map((e) {
+      return e.value;
+    }).toList();
+  }
+
+
 }
