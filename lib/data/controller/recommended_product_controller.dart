@@ -10,7 +10,7 @@ class RecommendedProductController extends GetxController {
   RecommendedProductController({required this.recommendedProductRepo});
 
   List<ProductModel> _recommendedProductList= [];
-  List<ProductModel> get recommededProductList => _recommendedProductList;
+  List<ProductModel> get recommendedProductList => _recommendedProductList;
 
   bool _isLoaded = false;
   bool get isLoaded => _isLoaded;

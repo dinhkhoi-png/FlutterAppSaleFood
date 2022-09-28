@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         primarySwatch: Colors.blue,
       ),
-      home: HomeFoodPage(),
-     initialRoute: RouteHelper.initial,
+      // home: HomeFoodPage(),
+     initialRoute: RouteHelper.getInitial(),
      getPages: RouteHelper.routes,
     );
   }

@@ -19,13 +19,14 @@ import '../../utils/dimensions.dart';
 
 
 class PopularFoodDetail extends StatelessWidget {
-  int pageId;
+  final int pageId;
+  final String page;
 
-  PopularFoodDetail({Key? key , required this.pageId}) : super(key: key);
+  const PopularFoodDetail({Key? key , required this.pageId , required this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var product = Get.find<PopularProductController>().populatProductList[pageId];
+    var product = Get.find<PopularProductController>().popularProductList[pageId];
     Get.find<PopularProductController>().initProduct(product,Get.find<CartController>());
     return Scaffold(
       body: Stack(
@@ -57,7 +58,11 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                     GestureDetector(
                         onTap: (){
-                          Get.to(()=>HomeFoodPage());
+                          if( page == "cartpage" ){
+                            Get.toNamed(RouteHelper.getCartPage());
+                          }else{
+                            Get.toNamed(RouteHelper.getInitial());
+                          }
                         },
                         child: AppIcon(icon: Icons.arrow_back_ios)
                     ),

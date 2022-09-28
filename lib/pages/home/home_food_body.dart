@@ -41,6 +41,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
   @override
   void dispose() {
     pageController.dispose();
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
@@ -58,9 +59,9 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                       child: PageView.builder(
 
                           controller: pageController,
-                          itemCount: popularProducts.populatProductList.length,
+                          itemCount: popularProducts.popularProductList.length,
                           itemBuilder: (context , position){ // 1 ngữ cảnh và chỉ mục (vị trí của position)
-                            return _buildPageItem(position , popularProducts.populatProductList[position]);
+                            return _buildPageItem(position , popularProducts.popularProductList[position]);
                           }
                       ),
                     
@@ -71,7 +72,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
             }),
         GetBuilder<PopularProductController>(builder: (popularProducts){
             return DotsIndicator(
-              dotsCount: popularProducts.populatProductList.isEmpty?1:popularProducts.populatProductList.length,
+              dotsCount: popularProducts.popularProductList.isEmpty?1:popularProducts.popularProductList.length,
               position: _currPageValue,
               decorator: DotsDecorator(
                 size: const Size.square(9.0),
@@ -107,11 +108,11 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
            return recommendedProduct.isLoaded?ListView.builder(
                shrinkWrap: true,
                physics: NeverScrollableScrollPhysics(),
-               itemCount: recommendedProduct.recommededProductList.length,
+               itemCount: recommendedProduct.recommendedProductList.length,
                itemBuilder: (context , index){
                  return GestureDetector(
                    onTap: (){
-                     Get.toNamed(RouteHelper.getRecommendedFood(index));
+                     Get.toNamed(RouteHelper.getRecommendedFood(index ,"home"));
                    },
                    child: Container(
                      margin: EdgeInsets.only(right: Dimensions.width15, left: Dimensions.width15,bottom: Dimensions.height10),
@@ -127,7 +128,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                                image: DecorationImage(
                                    fit: BoxFit.cover,
                                    image: NetworkImage(
-                                       AppConstants.BASE_URL+AppConstants.UPLOAD_URL+recommendedProduct.recommededProductList[index].img!
+                                       AppConstants.BASE_URL+AppConstants.UPLOAD_URL+recommendedProduct.recommendedProductList[index].img!
                                    )
                                )
                            ),
@@ -150,7 +151,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
                                  crossAxisAlignment: CrossAxisAlignment.start,
                                  mainAxisAlignment: MainAxisAlignment.center,
                                  children: [
-                                   BigText(text: recommendedProduct.recommededProductList[index].name!),
+                                   BigText(text: recommendedProduct.recommendedProductList[index].name!),
                                    SizedBox(height: Dimensions.height10,),
                                    SmallText(text: "Saefood With Tofu Clay Pot"),
                                    SizedBox(height: Dimensions.height10,),
@@ -226,7 +227,7 @@ class _HomeFoodBodyState extends State<HomeFoodBody> {
           GestureDetector(
           onTap: (){
 
-              Get.toNamed(RouteHelper.getPopularFood(index));
+              Get.toNamed(RouteHelper.getPopularFood(index , "home"));
               },
             child: Container(
               height: Dimensions.pageViewController,
