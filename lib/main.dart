@@ -5,6 +5,7 @@ import 'package:flutter_app_sale/data/controller/recommended_product_controller.
 import 'package:flutter_app_sale/pages/cart/cart_page.dart';
 import 'package:flutter_app_sale/pages/food_detail/recommended_food_detail.dart';
 import 'package:flutter_app_sale/pages/home/home_food_page.dart';
+import 'package:flutter_app_sale/pages/splash/splash_page.dart';
 import 'package:flutter_app_sale/routes/route_helper.dart';
 import 'package:get/get.dart';
 import 'helper/dependecies.dart' as dep;
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: HomeFoodPage(),
-     initialRoute: RouteHelper.getInitial(),
+      // home: SplashPage(),
+     initialRoute: RouteHelper.getSplashPage(),
      getPages: RouteHelper.routes,
     );
   }
