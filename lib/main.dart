@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app_sale/data/controller/cart_controller.dart';
 import 'package:flutter_app_sale/data/controller/popular_product_controller.dart';
 import 'package:flutter_app_sale/data/controller/recommended_product_controller.dart';
 import 'package:flutter_app_sale/pages/cart/cart_page.dart';
@@ -23,21 +24,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.find<PopularProductController>().getPopularProductList();
-    Get.find<RecommendedProductController>().getRecommendedProductList();
+    Get.find<CartController>().getCartData();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: "Nunito",
-        backgroundColor: Colors.white,
-        primarySwatch: Colors.blue,
-      ),
-      // home: HomeFoodPage(),
-      // home: SplashPage(),
-     initialRoute: RouteHelper.getSplashPage(),
-     getPages: RouteHelper.routes,
+    return GetBuilder<PopularProductController>(builder:   (_){
+      return GetBuilder<RecommendedProductController>(builder: (_){
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            fontFamily: "Nunito",
+            backgroundColor: Colors.white,
+            primarySwatch: Colors.blue,
+          ),
+          // home: HomeFoodPage(),
+          // home: SplashPage(),
+          initialRoute: RouteHelper.getSplashPage(),
+          getPages: RouteHelper.routes,
+        );
+      });
+    },
+
     );
   }
 
