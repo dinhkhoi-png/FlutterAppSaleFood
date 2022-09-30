@@ -12,10 +12,13 @@ class CartRepo{
   List<String> cart=[];
   List<String> cartHistory=[];
 
-  void addToCart(List<CartModel> cartList){
+  void addToCartList(List<CartModel> cartList){
 
-    // sharedPreferences.remove(AppConstants.CART_LIST);
-    // sharedPreferences.remove(AppConstants.CART_HISTORY_LIST);
+    // Xoá cart
+   // sharedPreferences.remove(AppConstants.CART_LIST);
+   // sharedPreferences.remove(AppConstants.CART_HISTORY_LIST);
+   //  return;
+
     var time = DateTime.now().toString();
     cart=[];
 

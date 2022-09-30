@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_sale/pages/account/account_page.dart';
+import 'package:flutter_app_sale/pages/auth/sign_up_page.dart';
 import 'package:flutter_app_sale/pages/cart/cart_history.dart';
 import 'package:flutter_app_sale/pages/home/home_food_page.dart';
 import 'package:flutter_app_sale/utils/colors.dart';
@@ -16,9 +18,9 @@ class _HomePageState extends State<HomePage> {
   late PersistentTabController _controller;
   List pages = [
     HomeFoodPage(),
-    Container(child: Center( child: Text("Next Page"))),
+    SignUpPage(),
     CartHistory(),
-    Container(child: Center( child: Text("Next next next Page"))),
+    AccountPage(),
 
   ];
   void onTapNav(int index){
@@ -35,9 +37,9 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _buildScreens() {
     return [
       HomeFoodPage(),
-      Container(child: Center( child: Text("Next Page"))),
+      SignUpPage(),
       CartHistory(),
-      Container(child: Center( child: Text("Next next next Page"))),
+      AccountPage(),
     ];
   }
   List<PersistentBottomNavBarItem> _navBarsItems() {

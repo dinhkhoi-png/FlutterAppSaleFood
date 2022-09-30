@@ -37,6 +37,7 @@ class PopularProductController extends GetxController {
 
       _isLoaded = true;
       update();
+
     } else {
 
     }
