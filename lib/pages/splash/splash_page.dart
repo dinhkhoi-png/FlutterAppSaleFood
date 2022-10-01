@@ -57,7 +57,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
             scale: animation,
               child: Center(child: Image.asset("assets/image/logo part 1.png", width: Dimensions.splashImg,))),
           SizedBox(height: Dimensions.height20,),
-          Center(child: Image.asset("assets/image/logo4.png", width: Dimensions.splashImg,)),
+          Center(child: Image.asset("assets/image/logo part 2.png", width: Dimensions.splashImg,)),
         ],
       ),
     );

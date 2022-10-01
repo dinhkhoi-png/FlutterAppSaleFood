@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app_sale/data/controller/cart_controller.dart';
 import 'package:flutter_app_sale/data/controller/popular_product_controller.dart';
 import 'package:flutter_app_sale/data/controller/recommended_product_controller.dart';
+import 'package:flutter_app_sale/pages/auth/sign_in_page.dart';
+import 'package:flutter_app_sale/pages/auth/sign_up_page.dart';
 import 'package:flutter_app_sale/pages/cart/cart_page.dart';
 import 'package:flutter_app_sale/pages/food_detail/recommended_food_detail.dart';
 import 'package:flutter_app_sale/pages/home/home_food_page.dart';
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           // home: HomeFoodPage(),
-          // home: SplashPage(),
+          // home: SignInPage(),
           initialRoute: RouteHelper.getSplashPage(),
           getPages: RouteHelper.routes,
         );

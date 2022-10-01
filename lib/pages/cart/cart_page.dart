@@ -105,6 +105,7 @@ class CartPage extends StatelessWidget {
                                               image: NetworkImage(
                                                   AppConstants.BASE_URL+AppConstants.UPLOAD_URL+cartController.getItems[index].img!
                                               )
+
                                           ),
                                           borderRadius: BorderRadius.circular(Dimensions.radius20),
                                           color: Colors.white
